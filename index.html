@@ -29,17 +29,12 @@
     <!-- depending on your needs. For now just stick with these ones -->
      <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
         
-           <a-assets>
-        <a-asset-item id="animated-asset" src="models/azeria/scene.gltf></a-asset-item>
-    </a-assets>
+  <a-marker type="barcode" value="2">
          
-             <a-marker id="animated-marker" type='barcode' value='2'>
-        <a-entity
-            gltf-model="#animated-asset"
-            scale="2">
-        </a-entity>
-    </a-marker>
-   
+            <!-- A yellow box -->
+            <a-box position='0 0.5 0' color="yellow"></a-box>
+ 
+         </a-marker>
   
        
          <!-- Define the camera of the scene -->
