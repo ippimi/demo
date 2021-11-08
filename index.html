@@ -14,13 +14,7 @@
     <!-- time-out after the load event. When this problem will be fixed in the AR.js library, this hack won't be necessary -->
     <!-- anymore -->
     <script>
- window.onload = function(){    
-        setTimeout(function(){
-            var resizeEvent = window.document.createEvent('UIEvents');
-            resizeEvent.initUIEvent('resize', true, false, window, 0);
-            window.dispatchEvent(resizeEvent);
-        }, 3000);
-    }; 
+
     </script>  
 </head>
  
