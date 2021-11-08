@@ -1,0 +1,11 @@
+Model Information:
+* title:	Egyptian Vase (Free)
+* source:	https://sketchfab.com/3d-models/egyptian-vase-free-0a505cc6635745edbcf9476b65402a53
+* author:	wolfgar74 (https://sketchfab.com/wolfgar74)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Egyptian Vase (Free)" (https://sketchfab.com/3d-models/egyptian-vase-free-0a505cc6635745edbcf9476b65402a53) by wolfgar74 (https://sketchfab.com/wolfgar74) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
