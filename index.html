@@ -18,7 +18,13 @@
 
     </script>  
 </head>
-    <a-scene embedded 
+   
+<body>
+    <!-- a-scene defines the scene that we are agoing to use. After arjs= there are various options that can be customized  -->
+    <!-- depending on your needs. For now just stick with these ones -->
+    
+     
+         <a-scene embedded 
               arjs= "trackingMethod: best; sourceType: webcam; debugUIEnabled: false";
                     detectionMode: mono_and_matrix;
                     matrixCodeType: 3x3;
@@ -27,19 +33,13 @@
                     gesture-detector 
                     id="scene"
                     >
-<body>
-    <!-- a-scene defines the scene that we are agoing to use. After arjs= there are various options that can be customized  -->
-    <!-- depending on your needs. For now just stick with these ones -->
-    
-     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3; loading-screen=enabled: false'>
-        
          <a-assets>
   <a-asset-item id="tree2" src="models/vase/scene.gltf"></a-asset-item>
 </a-assets>
          
       
   <a-marker id="markerA" 
-            type='barcode'
+               type="barcode"
               raycaster="objects: .clickable"
              emitevents="true"
              cursor="fuse: false; rayOrigin: mouse;"
