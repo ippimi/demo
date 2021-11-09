@@ -41,14 +41,15 @@
   <a-marker id="animated-model" 
             type='barcode'
               raycaster="objects: .clickable"
-    emitevents="true"
-    cursor="fuse: false; rayOrigin: mouse;"
+             emitevents="true"
+             cursor="fuse: false; 
+            rayOrigin: mouse;"
             value='2'>
       
             <a-entity
                 id="tree2"
                 gltf-model="#tree2"
-                scale="0.01 0.01 0.01">
+                scale="0.01 0.01 0.01"
                 class="clickable"
                 gesture-handler
             </a-entity>
