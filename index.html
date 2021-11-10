@@ -1,65 +1,54 @@
 
 <!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-   
-    <!-- Initialize the viewport -->
-    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
- <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-    <script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-   <script src="https://raw.githack.com/fcor/arjs-gestures/master/dist/gestures.js"></script>
-    <!-- This is a hack because at the time of writing there are some distortions in the provided visuals until the  -->
-    <!-- system receives a resize event. The resize event must be triggered when everything has been loaded and the  -->
-    <!-- camera has been initialized. All the events I tried didn't work, so in the end I resorted using a 3 seconds -->
-    <!-- time-out after the load event. When this problem will be fixed in the AR.js library, this hack won't be necessary -->
-    <!-- anymore -->
-    <script>
 
-    </script>  
-</head>
-   
-<body>
-    <!-- a-scene defines the scene that we are agoing to use. After arjs= there are various options that can be customized  -->
-    <!-- depending on your needs. For now just stick with these ones -->
-    
-     
-         <a-scene embedded detectionMode: mono_and_matrix; matrixCodeType: 3x3;  gesture-detector
-              arjs= "sourceType: webcam; debugUIEnabled: false";
-                    
-                    
-                    renderer="logarithmicDepthBuffer: true;"
-                    vr-mode-ui="enabled: false"
-                    
-                    id="scene"
-                    >
-         <a-assets>
-  <a-asset-item id="tree2" src="models/vase/scene.gltf"></a-asset-item>
-</a-assets>
-         
-      
-  <a-marker id="animated-model" 
-            type='barcode'
-            value='2'
-              raycaster="objects: .clickable"
-             emitevents="true"
-             cursor="fuse: false; rayOrigin: mouse;"
-            >
-      
-            <a-entity
-                id="tree2"
-                gltf-model="#tree2"
-                scale="0.01 0.01 0.01"
-                class="clickable"
-                gesture-handler
-                      >
-            </a-entity>
-         
+<html>
+  <head>
+    <title>Gesture Interactions - A-Frame & AR.js</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="styles.css">
 
-         </a-marker>
-  
-       
-         <!-- Define the camera of the scene -->
-         <a-entity camera></a-entity>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="gesture-detector.js"></script>
+    <script src="gesture-handler.js"></script>
+  </head>
+
+  <body>
+    <a-scene
+      arjs
+      embedded
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
+    >
+      <a-assets>
+        <a-asset-item
+          id="bowser"
+          src="https://cdn.glitch.com/06bd98b4-97ee-4c07-a546-fe39ca205034%2Fbowser.glb"
+        >
+        </a-asset-item>
+      </a-assets>
+
+      <a-marker
+        preset="hiro"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerA"
+      >
+        <a-entity
+          id="bowser-model"
+          gltf-model="#bowser"
+          position="0 0 0"
+          scale="0.05 0.05 0.05"
+          class="clickable"
+          gesture-handler
+        >
+        </a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
     </a-scene>
-</body>
+  </body>
+</html>
