@@ -18,8 +18,6 @@
     <a-scene
       arjs
       embedded
-       detectionMode: mono_and_matrix;
-       matrixCodeType: 3x3;      
       renderer="logarithmicDepthBuffer: true;"
       vr-mode-ui="enabled: false"
       gesture-detector
@@ -33,13 +31,13 @@
         </a-asset-item>
       </a-assets>
 
-     <a-marker id="animated-model" 
-            type='barcode'
-            value='2'
-              raycaster="objects: .clickable"
-             emitevents="true"
-             cursor="fuse: false; rayOrigin: mouse;"
-            >
+      <a-marker
+        preset="hiro"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+        id="markerA"
+      >
         <a-entity
           id="bowser-model"
           gltf-model="#bowser"
