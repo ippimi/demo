@@ -13,7 +13,17 @@
     <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
     <script src="gesture-detector.js"></script>
     <script src="gesture-handler.js"></script>
-  
+   <script>
+        // https://aframe.io/docs/1.0.0/introduction/writing-a-component.html
+        AFRAME.registerComponent("bowser-model", {
+            tick: function() {
+                let obj3d = this.el.sceneEl.querySelector("a-marker");
+                // console.log(obj3d);
+                this.el.object3D.setRotationFromQuaternion(obj3d.object3D.quaternion);
+                this.el.object3D.position.set(obj3d.object3D.position.x, obj3d.object3D.position.y, obj3d.object3D.position.z);
+            }
+        });
+    </script>
   </head>
 
   <body>
